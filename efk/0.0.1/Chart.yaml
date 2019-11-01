@@ -16,5 +16,5 @@ keywords:
 - elasticsearch
 - kibana
 - fluent-bit
+- zcloud-system
 description: EFK stack
-systemChart: true

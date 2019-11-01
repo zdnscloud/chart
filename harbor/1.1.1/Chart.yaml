@@ -6,6 +6,7 @@ keywords:
 - docker
 - registry
 - harbor
+- zcloud-system
 home: https://goharbor.io
 icon: https://raw.githubusercontent.com/goharbor/harbor/master/docs/img/harbor_logo.png
 sources:
@@ -17,4 +18,3 @@ maintainers:
 - name: paulczar
   email: username.taken@gmail.com
 engine: gotpl
-systemChart: true
