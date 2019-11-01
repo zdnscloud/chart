@@ -1,0 +1,59 @@
+[
+    {
+        "label": "coreServiceDomain",
+        "jsonKey": "ingress.core",
+        "type": "string",
+        "required": true,
+        "description": "the ingress domain of harbor core registry service"
+    },
+    {
+        "label": "caCert",
+        "jsonKey": "ingress.caCrt",
+        "type": "string",
+        "required": false,
+        "description": "the ca cert of harbor registry service"
+    },
+    {
+        "label": "tlsCert",
+        "jsonKey": "ingress.tlsCrt",
+        "type": "string",
+        "required": false,
+        "description": "the tls cert of harbor registry service"
+    },
+    {
+        "label": "tlsKey",
+        "jsonKey": "ingress.tlsKey",
+        "type": "string",
+        "required": false,
+        "description": "the tls key of harbor registry service"
+    },
+    {
+        "label": "storageClass",
+        "jsonKey": "persistence.storageClass",
+        "type": "enum",
+        "required": false,
+        "description": "registry component storageClass type and default is lvm",
+        "validValues": ["cephfs", "lvm"]
+    },
+    {
+        "label": "storageSize",
+        "jsonKey": "persistence.registryStorageSize",
+        "type": "int",
+        "required": false,
+        "description": "registry component storage size and default is 50(Gi)"
+    },
+    {
+        "label": "externalURL",
+        "jsonKey": "externalURL",
+        "type": "string",
+        "required": true,
+        "description": "the external url of harbor registry service"
+    },
+    {
+        "label": "adminPassword",
+        "jsonKey": "harborAdminPassword",
+        "type": "string",
+        "required": false,
+        "description": "harbor admin password and default is zcloud"
+    }
+]

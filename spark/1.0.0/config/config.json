@@ -1,0 +1,12 @@
+[
+    {"label": "masterReplicas", "jsonKey": "master.replicas", "type": "int", "required": false, "description": "spark master replicas and default is 1"},
+    { "label": "masterDaemonMemory", "jsonKey": "master.daemonMemory", "type": "string", "required": false, "description": "spark master daemonMemory and default is 1g"},
+    { "label": "workerReplicas", "jsonKey": "worker.replicas", "type": "int", "required": false, "description": "spark worker replicas and default is 3"},
+    { "label": "workerDaemonMemory", "jsonKey": "worker.daemonMemory", "type": "string", "required": false, "description": "spark worker daemonMemory and default is 1g"},
+    { "label": "workerExecutorMemory", "jsonKey": "worker.executorMemory", "type": "string", "required": false, "description": "spark worker executorMemory and default is 1g"},
+    { "label": "zeppelinReplicas", "jsonKey": "zeppelin.replicas", "type": "int", "required": false, "description": "spark zeppelin replicas and default is 1"},
+    { "label": "zeppelinConfigPersistence", "jsonKey": "zeppelin.persistence.config.storageClass", "type": "enum", "required": false, "description": "zepplin config storageclass and default is lvm", "validValues": ["cephfs", "lvm"]},
+    { "label": "zeppelinConfigPersistentVolumeSize", "jsonKey": "zeppelin.persistence.config.size", "type": "int", "required": false, "description": "zeppelin config persistent volume size and default is 10(Gi)"},
+    { "label": "zepplinNotebookStorageClass", "jsonKey": "zeppelin.persistence.notebook.storageClass", "type": "enum", "required": false, "description": "zeppelin notebook storageclass and default is lvm", "validValues": ["cephfs", "lvm"]},
+    { "label": "zepplinNotebookPersistentVolumeSize", "jsonKey": "zeppelin.persistence.notebook.size", "type": "int", "required": false, "description": "zeppelin notebook persistent volume size and default is 10(Gi)"}
+]

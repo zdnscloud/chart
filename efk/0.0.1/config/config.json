@@ -1,0 +1,31 @@
+[
+    {
+        "label": "elasticsearchReplicas",
+        "jsonKey": "elasticsearch.replicas",
+        "type": "int",
+        "required": false,
+        "description": "elasticsearch cluster node number and default is 3"
+    },
+    {
+        "label": "elasticsearchStorageClass",
+        "jsonKey": "elasticsearch.volumeClaimTemplate.storageClassName",
+        "type": "enum",
+        "required": false,
+        "description": "elasticsearch storageClass type and default is lvm",
+        "validValues": ["cephfs", "lvm"]
+    },
+    {
+        "label": "elasticsearchStorageSize",
+        "jsonKey": "elasticsearch.volumeClaimTemplate.resources.requests.storage",
+        "type": "int",
+        "required": false,
+        "description": "elasticsearch storage size and default is 10(Gi)"
+    },
+    {
+        "label": "ingressDomain",
+        "jsonKey": "kibana.ingress.hosts",
+        "type": "string",
+        "required": false,
+        "description": "the ingress domain of cluster efk service and default is efk.cluster.local"
+    }
+]
