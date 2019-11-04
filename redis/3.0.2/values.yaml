@@ -24,12 +24,12 @@ cluster:
   slaveCount: 1
 
 metrics:
-  enabled: false
+  enabled: true
   # resources: {}
   # podAnnotations: {}
-  # targetServiceAnnotations:
-  #   prometheus.io/scrape: "true"
-  #   prometheus.io/port: "9121"
+  targetServiceAnnotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "9121"
   image:
     # registry: docker.io
     repository: oliver006/redis_exporter
