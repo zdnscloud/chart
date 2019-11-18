@@ -1,7 +1,7 @@
 [
     { "label": "replicaCount", "jsonKey": "deployment.replicas", "type": "int", "required": false, "description": "vanguard deployment replicas and default is 1"},
     { "label": "imageRepository", "jsonKey": "deployment.image.repository", "type": "string", "required": false, "description": "vanguard deployment image repository and default is zdnscloud/vanguard"},
-    { "label": "imageTag", "jsonKey": "deployment.image.tag", "type": "string", "required": false, "description": "vanguard deployment image tag and default is v0.1"},
+    { "label": "imageTag", "jsonKey": "deployment.image.tag", "type": "string", "required": false, "description": "vanguard deployment image tag and default is v0.2"},
     { "label": "generalLogEnabled", "jsonKey": "configmap.logger.general_log.enable", "type": "bool", "required": false, "description": "vanguard general log enable and default is false"},
     { "label": "cacheEnabled", "jsonKey": "configmap.cache.enable", "type": "bool", "required": false, "description": "vanguard general cache enable and default is true"},
     { "label": "clusterDnsServer", "jsonKey": "configmap.kubernetes.cluster_dns_server", "type": "string", "required": false, "description": "kubernetes cluster dns server ip and default is 10.43.0.10"},
