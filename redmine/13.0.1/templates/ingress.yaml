@@ -1,0 +1,33 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: "{{- printf "%s-%s" .Values.ingress.host.name $.Release.Name | trunc 63 | trimSuffix "-" | replace "." "-" -}}"
+  labels:
+    app: {{ template "redmine.fullname" $ }}
+    chart: {{ template "redmine.chart" $ }}
+    release: "{{ $.Release.Name }}"
+    heritage: "{{ $.Release.Service }}"
+  annotations:
+    {{- if .Values.ingress.certManager }}
+    kubernetes.io/tls-acme: "true"
+    {{- end }}
+    {{- range $key, $value := .Values.ingress.host.annotations }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+spec:
+  rules:
+  - host: {{ .Values.ingress.host.name }}
+    http:
+      paths:
+      - path: {{ default "/" .Values.ingress.host.path }}
+        backend:
+          serviceName: {{ template "redmine.fullname" $ }}
+          servicePort: 80
+  {{- if .Values.ingress.host.tls }}
+  tls:
+    - secretName: {{ .Values.ingress.host.tlsSecret }}
+      hosts:
+        - {{ .Values.ingress.host.name }}
+  {{- end }}
+{{- end }}
