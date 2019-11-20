@@ -1,0 +1,45 @@
+[{
+        "label": "redminePassword",
+        "jsonKey": "redminePassword",
+        "type": "string",
+        "required": false,
+        "description": "redmine admin password and default is redmine"
+    },
+    {
+        "label": "dataStorageClass",
+        "jsonKey": "persistence.storageClass",
+        "type": "enum",
+        "required": false,
+        "description": "redmine persistence storageClass and default is lvm",
+        "validValues": ["cephfs", "lvm"]
+    },
+    {
+        "label": "databaseStorageClass",
+        "jsonKey": "mariadb.master.persistence.storageClass",
+        "type": "enum",
+        "required": false,
+        "description": "redmine persistence storageClass and default is lvm",
+        "validValues": ["cephfs", "lvm"]
+    },
+    {
+        "label": "databaseStorageSize",
+        "jsonKey": "mariadb.master.persistence.size",
+        "type": "int",
+        "required": false,
+        "description": "redmine database persistence storage size and default is 8(Gi)"
+    },
+    {
+        "label": "dataStorageSize",
+        "jsonKey": "persistence.size",
+        "type": "int",
+        "required": false,
+        "description": "redmine data persistence storage size and default is 8(Gi)"
+    },
+    {
+        "label": "ingressDomain",
+        "jsonKey": "ingress.host.name",
+        "type": "string",
+        "required": true,
+        "description": "redmine ingress domain"
+    }
+]
