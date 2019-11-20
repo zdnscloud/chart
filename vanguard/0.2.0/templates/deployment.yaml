@@ -25,27 +25,29 @@ spec:
     spec:
       serviceAccountName: {{ template "vanguard.serviceAccount.name" . }}
       containers:
-        - name: {{ template "vanguard.name" . }}
-          image: "{{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}"
-          imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
-          livenessProbe:
-            httpGet:
-              path: /health 
-              port: 9000 
-            initialDelaySeconds: 5
-            timeoutSeconds: 2
-            periodSeconds: 15
-            failureThreshold: 2
-          ports:
-          - containerPort: 53
-            name: dns-port
-            protocol: UDP
-          - containerPort: 9000
-            name: cmd-port
-            protocol: TCP
-          volumeMounts:
-          - name: vanguard-cfg
-            mountPath: /etc/vanguard
+      - name: {{ template "vanguard.name" . }}
+        image: "{{ .Values.deployment.image.repository }}:{{ .Values.deployment.image.tag }}"
+        imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 9000
+          initialDelaySeconds: 5
+          timeoutSeconds: 2
+          periodSeconds: 15
+          failureThreshold: 2
+        ports:
+        - containerPort: 53
+          name: dns-port
+          protocol: UDP
+        - containerPort: 9000
+          name: cmd-port
+          protocol: TCP
+        volumeMounts:
+        - name: vanguard-cfg
+          mountPath: /etc/vanguard
+        resources:
+{{ toYaml .Values.deployment.resources | indent 10 }}
       volumes:
       - name: vanguard-cfg
         configMap:

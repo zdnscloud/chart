@@ -16,13 +16,13 @@ imagePullPolicy: "IfNotPresent"
 
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
-resources: {}
+resources:
   # limits:
   #   cpu: 200m
   #   memory: 1536Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 1024Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi
 kafkaHeapOptions: "-Xmx1G -Xms1G"
 
 ## The StatefulSet Update Strategy which Kafka will use when changes are applied.
@@ -230,13 +230,13 @@ prometheus:
     ## Port jmx-exporter exposes Prometheus format metrics to scrape
     port: 5556
 
-    resources: {}
+    resources:
       # limits:
       #   cpu: 200m
       #   memory: 1Gi
-      # requests:
-      #   cpu: 100m
-      #   memory: 100Mi
+      requests:
+        cpu: 100m
+        memory: 100Mi
 
   ## Prometheus Kafka Exporter: exposes complimentary metrics to JMX Exporter
   kafka:
@@ -255,13 +255,13 @@ prometheus:
     port: 9308
 
     ## Resource limits
-    resources: {}
+    resources:
 #      limits:
 #        cpu: 200m
 #        memory: 1Gi
-#      requests:
-#        cpu: 100m
-#        memory: 100Mi
+      requests:
+        cpu: 100m
+        memory: 100Mi
 
   operator:
     ## Are you using Prometheus Operator?
@@ -309,7 +309,7 @@ zookeeper:
     type: ClusterIP
     port: 2181
 
-  resources: {}
+  resources:
     # We usually recommend not to specify default resources and to leave this as a conscious
     # choice for the user. This also increases chances charts run on environments with little
     # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -317,9 +317,9 @@ zookeeper:
     # limits:
     #  cpu: 100m
     #  memory: 128Mi
-    # requests:
-    #  cpu: 100m
-    #  memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
 
   persistence:
     enabled: true
@@ -373,13 +373,13 @@ schema-registry:
   ## Confluent has production deployment guidelines here:
   ## ref: https://github.com/confluentinc/schema-registry/blob/master/docs/deployment.rst
   ##
-  resources: {}
+  resources:
     # limits:
     #  cpu: 100m
     #  memory: 128Mi
-    # requests:
-    #  cpu: 100m
-    #  memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
 
   ## The port on which the SchemaRegistry will be available and serving requests
   servicePort: 8081

@@ -61,7 +61,10 @@ volumePermissions:
     ##
     # pullSecrets:
     #   - myRegistryKeySecretName
-  resources: {}
+  resources:
+    requests:
+      cpu: 100m
+      memory: 100Mi
 
 service:
   ## Kubernetes service type, ClusterIP and NodePort are supported at present
@@ -266,7 +269,10 @@ master:
   ## Configure master resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
   ##
-  resources: {}
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
   livenessProbe:
     enabled: true
     ##
@@ -388,7 +394,10 @@ slave:
   ## Configure slave resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
   ##
-  resources: {}
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
   livenessProbe:
     enabled: true
     ##
@@ -435,7 +444,10 @@ metrics:
     ##
     # pullSecrets:
     #   - myRegistryKeySecretName
-  resources: {}
+  resources:
+    requests:
+      cpu: 100m
+      memory: 100Mi
   annotations:
     prometheus.io/scrape: "true"
     prometheus.io/port: "9104"

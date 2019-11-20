@@ -334,7 +334,10 @@ readinessProbe:
 ##
 metrics:
   enabled: true
-  # resources: {}
+  resources:
+    requests:
+      cpu: 100m
+      memory: 100Mi
   service:
     type: ClusterIP
     annotations:
