@@ -50,6 +50,10 @@ deployment:
   annotations:
     prometheus:
       port: 9000
+  resources:
+    requests:
+      cpu: 10m
+      memory: 50Mi
 
 service:
   port: 53
