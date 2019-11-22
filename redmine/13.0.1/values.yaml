@@ -122,6 +122,10 @@ mariadb:
       storageClass: lvm
       accessMode: ReadWriteOnce
       size: 8
+    resources: 
+      requests:
+        memory: 256Mi
+        cpu: 100m
 
 ##
 ## PostgreSQL chart configuration
@@ -290,10 +294,10 @@ replicas: 1
 
 ## Redmine pods resource requests and limits
 ## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#resource-requests-and-limits-of-pod-and-container
-resources: {}
-  # requests:
-  #   cpu: "1"
-  #   memory: "1G"
+resources: 
+  requests:
+    memory: 256Mi
+    cpu: 100m
   # limits:
   #   cpu: "2"
   #   memory: "1G"
