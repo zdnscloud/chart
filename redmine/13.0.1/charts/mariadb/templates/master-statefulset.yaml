@@ -8,8 +8,6 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
     component: master
-  annotations:
-    linkerd.io/inject: enabled
 spec:
   selector:
     matchLabels:
@@ -36,6 +34,8 @@ spec:
         chart: {{ template "mariadb.chart" . }}
         release: {{ .Release.Name }}
         component: master
+      annotations:
+        linkerd.io/inject: enabled
     spec:
       {{- if .Values.schedulerName }}
       schedulerName: {{ .Values.schedulerName | quote }}

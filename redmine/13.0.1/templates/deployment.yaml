@@ -8,8 +8,6 @@ metadata:
     chart: {{ template "redmine.chart" . }}
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
-  annotations:
-    linkerd.io/inject: enabled
 spec:
   selector:
     matchLabels:
