@@ -258,8 +258,7 @@ affinity: {}
 ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 ##
 podAnnotations: 
-  annotations:
-    linkerd.io/inject: enabled
+  linkerd.io/inject: enabled
 
 ## Enable persistence using Persistent Volume Claims
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
