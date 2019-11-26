@@ -3,9 +3,5 @@
     { "label": "imageRepository", "jsonKey": "deployment.image.repository", "type": "string", "required": false, "description": "vanguard deployment image repository and default is zdnscloud/vanguard"},
     { "label": "imageTag", "jsonKey": "deployment.image.tag", "type": "string", "required": false, "description": "vanguard deployment image tag and default is v0.2"},
     { "label": "generalLogEnabled", "jsonKey": "configmap.logger.general_log.enable", "type": "bool", "required": false, "description": "vanguard general log enable and default is false"},
-    { "label": "cacheEnabled", "jsonKey": "configmap.cache.enable", "type": "bool", "required": false, "description": "vanguard general cache enable and default is true"},
-    { "label": "clusterDnsServer", "jsonKey": "configmap.kubernetes.cluster_dns_server", "type": "string", "required": false, "description": "kubernetes cluster dns server ip and default is 10.43.0.10"},
-    { "label": "clusterDomain", "jsonKey": "configmap.kubernetes.cluster_domain", "type": "string", "required": true, "description": "kubernetes cluster domain name"},
-    { "label": "clusterCIDR", "jsonKey": "configmap.kubernetes.cluster_cidr", "type": "string", "required": false, "description": "kubernetes cluster cidr and default is 10.42.0.0/16"},
-    { "label": "clusterServerIpRange", "jsonKey": "configmap.kubernetes.cluster_server_ip_range", "type": "string", "required": false, "description": "kubernetes cluster server ip range and default is 10.43.0.0/16"}
+    { "label": "cacheEnabled", "jsonKey": "configmap.cache.enable", "type": "bool", "required": false, "description": "vanguard general cache enable and default is true"}
 ]

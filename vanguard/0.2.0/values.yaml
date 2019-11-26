@@ -11,7 +11,7 @@ configmap:
   - cache
   - forwarder
   - recursor
-  - kubernetes
+  - local_data
   logger:
     query_log: 
       enable: true
@@ -30,16 +30,15 @@ configmap:
         forward_style: "rtt"
         forwarders:
         - 114.114.114.114:53
+  local_data:
+  - view: default
+    redirect:
+    - www.zdns.cn 3600 A 107.150.125.17
   recursor:
   - view: default
     enable: true
   resolver:
     check_cname_indirect: false
-  kubernetes:
-    cluster_dns_server: "10.43.0.10"
-    cluster_domain: "cluster.local"
-    cluster_cidr: "10.42.0.0/16"
-    cluster_service_ip_range: "10.43.0.0/16"
 
 deployment:
   replicas: 1
