@@ -5,7 +5,7 @@ metadata:
   annotations:
     rbac.authorization.kubernetes.io/autoupdate: "true"
   labels:
-    app: {{ template "vanguard.name" . }}
+    app: {{ template "vanguard.fullname" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}

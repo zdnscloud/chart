@@ -4,7 +4,7 @@ metadata:
   annotations:
     zcloud.cn/update-on-config-change: "true"
   labels:
-    app: {{ template "vanguard.name" . }}
+    app: {{ template "vanguard.fullname" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
@@ -13,7 +13,7 @@ spec:
   replicas: {{ .Values.deployment.replicas}}
   selector:
     matchLabels:
-      app: {{ template "vanguard.name" . }}
+      app: {{ template "vanguard.fullname" . }}
   template:
     metadata:
       annotations:
@@ -21,7 +21,7 @@ spec:
         prometheus.io/port: {{ .Values.deployment.annotations.prometheus.port | quote }}
         prometheus.io/path: "/metrics"
       labels:
-        app: {{ template "vanguard.name" . }}
+        app: {{ template "vanguard.fullname" . }}
         release: {{ .Release.Name }}
     spec:
       serviceAccountName: {{ template "vanguard.serviceAccount.name" . }}

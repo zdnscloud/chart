@@ -4,7 +4,7 @@ metadata:
   name: zcloud:{{ .Release.Namespace }}-{{ template "vanguard.fullname" . }}
   labels:
     kubernetes.io/bootstrapping: rbac-defaults
-    app: {{ template "vanguard.name" . }}
+    app: {{ template "vanguard.fullname" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
