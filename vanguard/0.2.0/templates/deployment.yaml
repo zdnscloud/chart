@@ -2,9 +2,6 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   annotations:
-    prometheus.io/scrape: "true"
-    prometheus.io/port: {{ .Values.deployment.annotations.prometheus.port | quote }}
-    prometheus.io/path: "/metrics"
     zcloud.cn/update-on-config-change: "true"
   labels:
     app: {{ template "vanguard.name" . }}
@@ -19,6 +16,10 @@ spec:
       app: {{ template "vanguard.name" . }}
   template:
     metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: {{ .Values.deployment.annotations.prometheus.port | quote }}
+        prometheus.io/path: "/metrics"
       labels:
         app: {{ template "vanguard.name" . }}
         release: {{ .Release.Name }}
