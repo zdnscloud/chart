@@ -1,0 +1,7 @@
+[{
+    "label": "ingressDomain",
+    "jsonKey": "ingress.host",
+    "type": "string",
+    "required": true,
+    "description": "the ingress domain of emojivoto"
+}]

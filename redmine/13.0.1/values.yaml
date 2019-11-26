@@ -122,6 +122,10 @@ mariadb:
       storageClass: lvm
       accessMode: ReadWriteOnce
       size: 8
+    resources: 
+      requests:
+        memory: 256Mi
+        cpu: 100m
 
 ##
 ## PostgreSQL chart configuration
@@ -253,7 +257,8 @@ affinity: {}
 ## Pod annotations
 ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 ##
-podAnnotations: {}
+podAnnotations: 
+  linkerd.io/inject: enabled
 
 ## Enable persistence using Persistent Volume Claims
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
@@ -290,10 +295,10 @@ replicas: 1
 
 ## Redmine pods resource requests and limits
 ## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#resource-requests-and-limits-of-pod-and-container
-resources: {}
-  # requests:
-  #   cpu: "1"
-  #   memory: "1G"
+resources: 
+  requests:
+    memory: 256Mi
+    cpu: 100m
   # limits:
   #   cpu: "2"
   #   memory: "1G"
