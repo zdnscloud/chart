@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  type: ClusterIP
+  selector:
+    app: {{ .Release.Name }}-seafile
+  ports:
+  - name: web
+    port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: memcached
+spec:
+  type: ClusterIP
+  selector:
+    app: {{ .Release.Name }}-memcached
+  ports:
+  - name: web
+    port: 11211
+    targetPort: 11211
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-db
+spec:
+  type: ClusterIP
+  selector:
+    app: {{ .Release.Name }}-db
+  ports:
+  - name: web
+    port: 3306
+    targetPort: 3306

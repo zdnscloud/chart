@@ -1,0 +1,13 @@
+# Default values for emojivoto.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+ingress:
+  enabled: true
+  host: ""
+  tls: []
+persistence:
+  storageClass: lvm
+  data:
+    size: 10
+  config:
+    size: 1

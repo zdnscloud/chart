@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-openfire
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-openfire
+      annotations: 
+        linkerd.io/inject: enabled
+    spec:
+      containers:
+      - env:
+        image: gizmotronic/openfire:4.4.4
+        imagePullPolicy: IfNotPresent
+        name: openfire
+        ports:
+        - containerPort: 9090
+          name: web-insecure
+          protocol: TCP
+        - containerPort: 9091
+          name: web-secure
+          protocol: TCP
+        - containerPort: 5222
+          name: xmpp
+          protocol: TCP
+        - containerPort: 7777
+          name: file-trans
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 10m
+            memory: 20Mi
+        volumeMounts:
+        - mountPath: /var/lib/openfire
+          name: data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}-data

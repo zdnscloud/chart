@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name}}-db
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name}}-db
+  serviceName: {{ .Release.Name}}-db
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name}}-db
+    spec:
+      containers:
+      - env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: {{ .Values.db.password}}
+        - name: MYSQL_LOG_CONSOLE
+          value: "true"
+        image: mariadb:10.1
+        imagePullPolicy: IfNotPresent
+        name: mariadb
+        ports:
+        - containerPort: 3306
+          name: mariadb
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 10m
+            memory: 20Mi
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: data
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: {{ .Values.persistence.db.size}}Gi
+      storageClassName: {{ .Values.persistence.storageClass}}

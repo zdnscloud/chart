@@ -1,0 +1,44 @@
+[{
+        "label": "ingressDomain",
+        "jsonKey": "ingress.host",
+        "type": "string",
+        "required": true,
+        "description": "the ingress domain of seafile"
+    },
+    {
+        "label": "adminUserEmail",
+        "jsonKey": "admin.user",
+        "type": "string",
+        "required": true,
+        "description": "the default admin user email"
+    },
+    {
+        "label": "adminPassword",
+        "jsonKey": "admin.password",
+        "type": "string",
+        "required": true,
+        "description": "the admin password"
+    },
+    {
+        "label": "storageClass",
+        "jsonKey": "persistence.storageClass",
+        "type": "enum",
+        "required": false,
+        "description": "seafile persistence storageClass and default is lvm",
+        "validValues": ["cephfs", "lvm"]
+    },
+    {
+        "label": "dataStorageSize",
+        "jsonKey": "persistence.data.size",
+        "type": "int",
+        "required": false,
+        "description": "seafile data persistence storage size and default is 10(Gi)"
+    },
+    {
+        "label": "databaseStorageSize",
+        "jsonKey": "persistence.db.size",
+        "type": "int",
+        "required": false,
+        "description": "seafile database persistence storage size and default is 5(Gi)"
+    }
+]

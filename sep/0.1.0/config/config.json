@@ -1,0 +1,29 @@
+[{
+        "label": "ingressDomain",
+        "jsonKey": "ingress.host",
+        "type": "string",
+        "required": true,
+        "description": "the ingress domain of sep"
+    },
+    {
+        "label": "dbHost",
+        "jsonKey": "db.host",
+        "type": "string",
+        "required": true,
+        "description": "sep db host"
+    },
+    {
+        "label": "dbUser",
+        "jsonKey": "db.user",
+        "type": "string",
+        "required": true,
+        "description": "sep db user"
+    },
+    {
+        "label": "dbPassword",
+        "jsonKey": "db.password",
+        "type": "string",
+        "required": true,
+        "description": "sep db password"
+    }
+]

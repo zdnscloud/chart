@@ -1,0 +1,18 @@
+# Default values for emojivoto.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+ingress:
+  enabled: true
+  host: seafile.202.173.9.63.zc.zdns.cn
+  tls: []
+persistence:
+  storageClass: lvm
+  db:
+    size: 5
+  data:
+    size: 10
+db:
+  password: mariadb!@#seafile$123
+admin:
+  user: 814160020@qq.com
+  password: "17319330797"

@@ -1,0 +1,30 @@
+[{
+        "label": "ingressDomain",
+        "jsonKey": "ingress.host",
+        "type": "string",
+        "required": true,
+        "description": "the ingress domain of lychee"
+    },
+    {
+        "label": "storageClass",
+        "jsonKey": "persistence.storageClass",
+        "type": "enum",
+        "required": false,
+        "description": "lychee persistence storageClass and default is lvm",
+        "validValues": ["cephfs", "lvm"]
+    },
+    {
+        "label": "dataStorageSize",
+        "jsonKey": "persistence.data.size",
+        "type": "int",
+        "required": false,
+        "description": "lychee data persistence storage size and default is 10(Gi)"
+    },
+    {
+        "label": "configStorageSize",
+        "jsonKey": "persistence.config.size",
+        "type": "int",
+        "required": false,
+        "description": "lychee config persistence storage size and default is 1(Gi)"
+    }
+]

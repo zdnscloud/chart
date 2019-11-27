@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-lychee
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-lychee
+      annotations: 
+        linkerd.io/inject: enabled
+    spec:
+      containers:
+      - env:
+        - name: TZ
+          value: Asia/Shanghai
+        image: linuxserver/lychee:v3.2.16-ls43
+        imagePullPolicy: IfNotPresent
+        name: lychee
+        ports:
+        - containerPort: 80
+          name: web
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 10m
+            memory: 20Mi
+        volumeMounts:
+        - mountPath: /config
+          name: config
+        - mountPath: /pictures
+          name: data
+      volumes:
+      - name: config
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}-config
+      - name: data
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}-data

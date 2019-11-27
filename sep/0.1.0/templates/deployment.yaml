@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+      annotations: 
+        linkerd.io/inject: enabled
+    spec:
+      containers:
+      - env:
+        - name: SEP_DB_HOST
+          value: {{ .Values.db.host|quote}}
+        - name: SEP_DB_USER
+          value: {{ .Values.db.user|quote}}
+        - name: SEP_DB_PASSWORD
+          value: {{ .Values.db.password|quote}}
+        image: zdnscloud/ucas-sep:v0.0.1
+        imagePullPolicy: IfNotPresent
+        name: sep
+        ports:
+        - containerPort: 8080
+          name: web-insecure
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 10m
+            memory: 20Mi

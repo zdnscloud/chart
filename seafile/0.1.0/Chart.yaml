@@ -1,0 +1,21 @@
+apiVersion: v2
+name: seafile
+description: Seafile是一个开源、专业、可靠的云存储平台；解决文件集中存储、共享和跨平台访问等问题，由北京海文互知网络有限公司开发，发布于2012年10月；除了一般网盘所提供的云存储以及共享功能外，Seafile还提供消息通信、群组讨论等辅助功能，帮助更好的围绕文件展开协同工作。
+
+# A chart can be either an 'application' or a 'library' chart.
+#
+# Application charts are a collection of templates that can be packaged into versioned archives
+# to be deployed.
+#
+# Library charts provide useful utilities or functions for the chart developer. They're included as
+# a dependency of application charts to inject those utilities and functions into the rendering
+# pipeline. Library charts do not define any templates and therefore cannot be deployed.
+type: application
+
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+version: 0.1.0
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application.
+appVersion: 0.0.1

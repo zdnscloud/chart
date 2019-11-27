@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-backuppc
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-backuppc
+      annotations: 
+        linkerd.io/inject: enabled
+    spec:
+      containers:
+      - env:
+        - name: BACKUPPC_WEB_USER
+          value: {{ .Values.admin.user|quote}}
+        - name: BACKUPPC_WEB_PASSWD
+          value: {{ .Values.admin.password|quote}}
+        image: adferrand/backuppc:4.3.1
+        imagePullPolicy: IfNotPresent
+        name: backuppc
+        ports:
+        - containerPort: 8080
+          name: web
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 10m
+            memory: 20Mi
+        volumeMounts:
+        - mountPath: /etc/backuppc
+          name: etc
+        - mountPath: /home/backuppc
+          name: home
+        - mountPath: /data/backuppc
+          name: data
+      volumes:
+      - name: etc
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}-etc
+      - name: home
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}-home
+      - name: data
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}-data

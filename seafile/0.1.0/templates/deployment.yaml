@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-seafile
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-seafile
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-seafile
+      annotations: 
+        linkerd.io/inject: enabled
+    spec:
+      containers:
+      - env:
+        - name: DB_HOST
+          value: {{ .Release.Name }}-db
+        - name: DB_ROOT_PASSWD
+          value: {{ .Values.db.password|quote}}
+        - name: SEAFILE_ADMIN_EMAIL
+          value: {{ .Values.admin.user}}
+        - name: SEAFILE_ADMIN_PASSWORD
+          value: {{ .Values.admin.password|quote}}
+        - name: SEAFILE_SERVER_LETSENCRYPT
+          value: "false"
+        - name: SEAFILE_SERVER_HOSTNAME
+          value: {{ .Values.ingress.host|quote}}
+        - name: TIME_ZONE
+          value: Asia/Shanghai
+        image: seafileltd/seafile-mc:7.0.5
+        imagePullPolicy: IfNotPresent
+        name: seafile
+        ports:
+        - containerPort: 80
+          name: web
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 10m
+            memory: 20Mi
+        volumeMounts:
+        - mountPath: /shared
+          name: data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}-data
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-memcached
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-memcached
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-memcached
+      annotations: 
+        linkerd.io/inject: enabled
+    spec:
+      containers:
+      - args:
+        - -m
+        - "256"
+        command:
+        - memcached
+        image: memcached:1.5.6
+        imagePullPolicy: IfNotPresent
+        name: memcached
+        ports:
+        - containerPort: 11211
+          name: memcached
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 10m
+            memory: 20Mi
