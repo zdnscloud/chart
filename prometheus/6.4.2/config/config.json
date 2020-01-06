@@ -1,0 +1,59 @@
+[{
+        "label": "ingressDomain",
+        "jsonKey": "grafana.ingress.hosts",
+        "type": "string",
+        "required": true,
+        "description": "the ingress domain of cluster monitor service"
+    },
+    {
+        "label": "adminPassword",
+        "jsonKey": "grafana.adminPassword",
+        "type": "string",
+        "required": false,
+        "description": "monitor grafana dashboard admin password and default is zcloud"
+    },
+    {
+        "label": "prometheusRetention",
+        "jsonKey": "prometheus.prometheusSpec.retention",
+        "type": "int",
+        "required": false,
+        "description": "prometheus data retention and default is 10(day)"
+    },
+    {
+        "label": "prometheusScrapeInterval",
+        "jsonKey": "prometheus.prometheusSpec.scrapeInterval",
+        "type": "int",
+        "required": false,
+        "description": "prometheus scrape interval and default is 10(s)"
+    },
+    {
+        "label": "prometheusStorageClass",
+        "jsonKey": "prometheus.prometheusSpec.storageClass",
+        "type": "enum",
+        "required": false,
+        "description": "prometheus storageClass and default is lvm",
+        "validValues": ["lvm", "cephfs"]
+    },
+    {
+        "label": "prometheusStorageSize",
+        "jsonKey": "prometheus.prometheusSpec.storageSize",
+        "type": "int",
+        "required": false,
+        "description": "prometheus storage size and default is 10(Gi)"
+    },
+    {
+        "label": "alertManagerStorageClass",
+        "jsonKey": "alertmanager.alertmanagerSpec.storageClass",
+        "type": "enum",
+        "required": false,
+        "description": "alertmanager storageClass default is lvm",
+        "validValues": ["lvm", "cephfs"]
+    },
+    {
+        "label": "alertManagerStorageSize",
+        "jsonKey": "alertmanager.alertmanagerSpec.storageSize",
+        "type": "int",
+        "required": false,
+        "description": "alertmanager storage size and default is 2(Gi)"
+    }
+]
