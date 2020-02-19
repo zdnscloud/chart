@@ -9,6 +9,7 @@ metadata:
     release: "{{ $.Release.Name }}"
     heritage: "{{ $.Release.Service }}"
   annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 1m
     {{- if .Values.ingress.certManager }}
     kubernetes.io/tls-acme: "true"
     {{- end }}

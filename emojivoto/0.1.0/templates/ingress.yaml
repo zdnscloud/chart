@@ -3,6 +3,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ .Release.Name }}-web
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 1m
 spec:
 {{- if .Values.ingress.tls }}
   tls:
