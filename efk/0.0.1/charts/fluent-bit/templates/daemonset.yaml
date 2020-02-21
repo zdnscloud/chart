@@ -7,6 +7,9 @@ metadata:
   annotations:
     zcloud.cn/update-on-config-change: "true"
 spec:
+  selector:
+    matchLabels:
+      app: {{ template "fluent-bit.fullname" . }}
   updateStrategy:
     type: RollingUpdate
   template:
