@@ -1,0 +1,3 @@
+[
+	{"label": "prometheusServiceName", "jsonKey": "prometheus.serviceName", "type": "string", "required": true, "description": "prometheus service name"}
+]

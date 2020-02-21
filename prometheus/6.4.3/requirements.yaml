@@ -1,0 +1,20 @@
+dependencies:
+
+  - name: kube-state-metrics
+    version: 2.0.*
+    repository: file://.charts/kube-state-metrics/
+    condition: kubeStateMetrics.enabled
+
+  - name: prometheus-node-exporter
+    version: 1.5.*
+    repository: file://.charts/prometheus-node-exporter/
+    condition: nodeExporter.enabled
+
+  - name: grafana
+    version: 3.7.*
+    repository: file://.charts/grafana/
+    condition: grafana.enabled
+
+  - name: prometheus-adapter
+    version: 1.4.0
+    repository: file://.charts/prometheus-adapter/
