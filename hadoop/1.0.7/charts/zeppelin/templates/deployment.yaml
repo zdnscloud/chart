@@ -15,6 +15,7 @@ spec:
   selector:
     matchLabels:
       app: {{ template "zeppelin.name" . }}
+      release: {{ .Release.Name }}
   template:
     metadata:
       labels:

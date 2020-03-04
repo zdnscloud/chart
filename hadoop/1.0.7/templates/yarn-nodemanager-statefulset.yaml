@@ -20,6 +20,8 @@ spec:
   selector:
     matchLabels:
       app: {{ template "hadoop.name" . }}
+      release: {{ .Release.Name }}
+      component: yarn-nm
   template:
     metadata:
       labels:

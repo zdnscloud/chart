@@ -16,6 +16,8 @@ spec:
   selector:
     matchLabels:
       app: {{ template "hadoop.name" . }}
+      release: {{ .Release.Name }}
+      component: hdfs-dn
   template:
     metadata:
       labels:
