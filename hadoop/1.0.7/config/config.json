@@ -1,9 +1,9 @@
 [
     {"label": "hdfsDataNodeReplicas", "jsonKey": "hdfs.dataNode.replicas", "type": "int", "required": false, "description": "hdfs datanode replicas and default is 1"},
     { "label": "yarnNodeManagerReplicas", "jsonKey": "yarn.nodeManager.replicas", "type": "int", "required": false, "description": "yarn nodemanager replicas and default is 2"},
-    { "label": "nameNodeStorageClass", "jsonKey": "persistence.nameNode.storageClass", "type": "enum", "required": false, "description": "namenode storageclass and default is lvm", "validValues": ["cephfs", "lvm"]},
+    { "label": "nameNodeStorageClass", "jsonKey": "persistence.nameNode.storageClass", "type": "string", "required": false, "description": "namenode storageclass"},
     { "label": "nameNodePersistentVolumeSize", "jsonKey": "persistence.nameNode.size", "type": "int", "required": false, "description": "namenode persistent volume size and default is 50(Gi)"},
-    { "label": "dataNodeStorageClass", "jsonKey": "persistence.dataNode.storageClass", "type": "enum", "required": false, "description": "datanode storageclass and default is lvm", "validValues": ["cephfs", "lvm"]},
+    { "label": "dataNodeStorageClass", "jsonKey": "persistence.dataNode.storageClass", "type": "string", "required": false, "description": "datanode storageclass"},
     { "label": "dataNodePersistentVolumeSize", "jsonKey": "persistence.dataNode.size", "type": "int", "required": false, "description": "datanode persistent volume size and default is 200(Gi)"},
     { "label": "zeppelinReplicas", "jsonKey": "zeppelin.zeppelin.replicas", "type": "int", "required": false, "description": "zeppelin replicas and default is 1"},
     { "label": "zeppelinDriverMemory", "jsonKey": "zeppelin.spark.driverMemory", "type": "string", "required": false, "description": "zeppelin driverMemory and default is 1g"},

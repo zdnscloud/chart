@@ -80,13 +80,13 @@ zeppelin:
       ## If undefined (the default) or set to null, no storageClassName spec is
       ## set, choosing the default provisioner. (gp2 on AWS, standard on
       ## GKE, AWS & OpenStack)
-      storageClass: "lvm"
+      storageClass: ""
       ## Set default PVC size
       size: 10
       ## Set default PVC access mode: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
       accessMode: ReadWriteOnce
     notebook:
       enabled: true
-      storageClass: "lvm"
+      storageClass: ""
       size: 10
       accessMode: ReadWriteOnce

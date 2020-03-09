@@ -3,6 +3,6 @@
     {"label": "postgresqlUsername", "jsonKey": "postgresqlUsername", "type": "string", "required": false, "description": "postgres admin user name and default is postgres"},
     {"label": "postgresqlPassword", "jsonKey": "postgresqlPassword", "type": "string", "required": false, "description": "postgres admin user password and default is zcloud"},
     {"label": "postgresqlDatabase", "jsonKey": "postgresqlDatabase", "type": "string", "required": false, "description": "postgres database name and default is zdns"},
-    { "label": "storageClass", "jsonKey": "persistence.storageClass", "type": "enum", "required": false, "description": "postgres data persistent volume storage class and default is lvm", "validValues": ["lvm", "cephfs"]},
+    { "label": "storageClass", "jsonKey": "persistence.storageClass", "type": "string", "required": false, "description": "postgres data persistent volume storageclass"},
     { "label": "persistentVolumeSize", "jsonKey": "persistence.size", "type": "int", "required": false, "description": "postgres data persistent volume size and default is 8(Gi)"}
 ]

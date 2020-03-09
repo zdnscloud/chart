@@ -103,13 +103,13 @@ yarn:
 persistence:
   nameNode:
     enabled: true
-    storageClass: "lvm"
+    storageClass: ""
     accessMode: ReadWriteOnce
     size: 50
 
   dataNode:
     enabled: true
-    storageClass: "lvm"
+    storageClass: ""
     accessMode: ReadWriteOnce
     size: 200
 
