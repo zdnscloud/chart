@@ -29,10 +29,9 @@
     {
         "label": "prometheusStorageClass",
         "jsonKey": "prometheus.prometheusSpec.storageClass",
-        "type": "enum",
+        "type": "string",
         "required": false,
-        "description": "prometheus storageClass and default is lvm",
-        "validValues": ["lvm", "cephfs"]
+        "description": "prometheus storageClass and default is lvm"
     },
     {
         "label": "prometheusStorageSize",
@@ -44,10 +43,9 @@
     {
         "label": "alertManagerStorageClass",
         "jsonKey": "alertmanager.alertmanagerSpec.storageClass",
-        "type": "enum",
+        "type": "string",
         "required": false,
-        "description": "alertmanager storageClass default is lvm",
-        "validValues": ["lvm", "cephfs"]
+        "description": "alertmanager storageClass default is lvm"
     },
     {
         "label": "alertManagerStorageSize",

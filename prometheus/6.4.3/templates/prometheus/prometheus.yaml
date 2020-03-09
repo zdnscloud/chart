@@ -129,7 +129,13 @@ spec:
 # {{ toYaml .Values.prometheus.prometheusSpec.storageSpec | indent 4 }}
     volumeClaimTemplate:
       spec:
-        storageClassName: {{ .Values.prometheus.prometheusSpec.storageClass}}
+        {{- if .Values.prometheus.prometheusSpec.storageClass }}
+          {{- if (eq "-" .Values.prometheus.prometheusSpec.storageClass) }}
+        storageClassName: ""
+          {{- else }}
+        storageClassName: "{{ .Values.prometheus.prometheusSpec.storageClass }}"
+          {{- end }}
+        {{- end }}
         accessModes: ["ReadWriteOnce"]
         resources:
           requests:

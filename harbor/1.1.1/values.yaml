@@ -108,7 +108,7 @@ persistence:
   # Setting it to "keep" to avoid removing PVCs during a helm delete 
   # operation. Leaving it empty will delete PVCs after the chart deleted
   resourcePolicy: "keep"
-  storageClass: lvm
+  storageClass: ""
   registryStorageSize: 50
   persistentVolumeClaim:
     registry:

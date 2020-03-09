@@ -9,8 +9,6 @@ spec:
       app: {{ .Release.Name }}-emoji-svc
   template:
     metadata:
-      annotations:
-        linkerd.io/inject: enabled
       labels:
         app: {{ .Release.Name }}-emoji-svc
     spec:
@@ -39,8 +37,6 @@ spec:
       app: {{ .Release.Name }}-voting-svc
   template:
     metadata:
-      annotations:
-        linkerd.io/inject: enabled
       labels:
         app: {{ .Release.Name }}-voting-svc
     spec:
@@ -69,8 +65,6 @@ spec:
       app: {{ .Release.Name }}-web-svc
   template:
     metadata:
-      annotations:
-        linkerd.io/inject: enabled
       labels:
         app: {{ .Release.Name }}-web-svc
     spec:
@@ -105,8 +99,6 @@ spec:
       app: {{ .Release.Name }}-vote-bot
   template:
     metadata:
-      annotations:
-        linkerd.io/inject: enabled
       labels:
         app: {{ .Release.Name }}-vote-bot
     spec:

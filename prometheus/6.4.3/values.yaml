@@ -95,7 +95,7 @@ alertmanager:
     logLevel: info
     replicas: 1
     retention: 120h
-    storageClass: lvm
+    storageClass: ""
     storageSize: 2
     externalUrl:
     routePrefix: /
@@ -427,7 +427,7 @@ prometheus:
     remoteRead: []
     remoteWrite: []
     resources: {}
-    storageClass: lvm
+    storageClass: ""
     storageSize: 10
     additionalScrapeConfigs: 
     - job_name: kubernetes-service-endpoints
