@@ -110,7 +110,7 @@ elasticsearch:
   transportPort: 9300
   updateStrategy: RollingUpdate
   volumeClaimTemplate:
-    storageClassName: "lvm"
+    storageClassName: ""
     accessModes:
     - ReadWriteOnce
     resources:

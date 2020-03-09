@@ -39,7 +39,7 @@ spec:
       {{- if (eq "-" .Values.volumeClaimTemplate.storageClassName) }}
       storageClassName: ""
       {{- else }}
-      storageClassName: {{ .Values.volumeClaimTemplate.storageClassName | quote }}
+      storageClassName: {{ .Values.volumeClaimTemplate.storageClassName }}
       {{- end }}
       {{- end }}
       resources:

@@ -9,10 +9,9 @@
     {
         "label": "elasticsearchStorageClass",
         "jsonKey": "elasticsearch.volumeClaimTemplate.storageClassName",
-        "type": "enum",
+        "type": "string",
         "required": false,
-        "description": "elasticsearch storageClass type and default is lvm",
-        "validValues": ["cephfs", "lvm"]
+        "description": "elasticsearch storageClass type and default is lvm"
     },
     {
         "label": "elasticsearchStorageSize",
