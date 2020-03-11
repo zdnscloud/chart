@@ -9,9 +9,9 @@
     {
         "label": "elasticsearchStorageClass",
         "jsonKey": "elasticsearch.volumeClaimTemplate.storageClassName",
-        "type": "string",
+        "type": "storageClass",
         "required": false,
-        "description": "elasticsearch storageClass type and default is lvm"
+        "description": "elasticsearch storageClass name"
     },
     {
         "label": "elasticsearchStorageSize",

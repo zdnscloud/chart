@@ -1,6 +1,6 @@
 [
     {"label": "password", "jsonKey": "password", "type": "string", "required": false, "description": "redis database password and default is zcloud"},
     { "label": "slaveCount", "jsonKey": "cluster.slaveCount", "type": "int", "required": false, "description": "the number of redis slave and default is 1"},
-    { "label": "storageClass", "jsonKey": "master.persistence.storageClass", "type": "string", "required": false, "description": "redis data persistent volume storageclass"},
+    { "label": "storageClass", "jsonKey": "master.persistence.storageClass", "type": "storageClass", "required": false, "description": "redis data persistent volume storageclass name"},
     { "label": "persistentVolumeSize", "jsonKey": "master.persistence.size", "type": "int", "required": false, "description": "redis data persistent volume size and default is 8(Gi)"}
 ]

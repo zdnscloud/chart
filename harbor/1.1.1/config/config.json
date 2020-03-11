@@ -30,9 +30,9 @@
     {
         "label": "storageClass",
         "jsonKey": "persistence.storageClass",
-        "type": "string",
+        "type": "storageClass",
         "required": false,
-        "description": "registry component storageClass type and default is lvm"
+        "description": "registry component storageClass name"
     },
     {
         "label": "storageSize",

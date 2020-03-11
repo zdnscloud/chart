@@ -8,16 +8,16 @@
     {
         "label": "dataStorageClass",
         "jsonKey": "persistence.storageClass",
-        "type": "string",
+        "type": "storageClass",
         "required": false,
-        "description": "redmine persistence storageClass and default is lvm"
+        "description": "redmine persistence storageClass name"
     },
     {
         "label": "databaseStorageClass",
         "jsonKey": "mariadb.master.persistence.storageClass",
-        "type": "string",
+        "type": "storageClass",
         "required": false,
-        "description": "redmine persistence storageClass and default is lvm"
+        "description": "redmine persistence storageClass name"
     },
     {
         "label": "databaseStorageSize",
