@@ -30,10 +30,9 @@
     {
         "label": "storageClass",
         "jsonKey": "persistence.storageClass",
-        "type": "enum",
+        "type": "storageClass",
         "required": false,
-        "description": "registry component storageClass type and default is lvm",
-        "validValues": ["cephfs", "lvm"]
+        "description": "registry component storageClass name"
     },
     {
         "label": "storageSize",

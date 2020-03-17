@@ -169,7 +169,7 @@ persistence:
   ##   GKE, AWS & OpenStack)
   ##
   # storageClass:
-  storageClass: "lvm"
+  storageClass: ""
   accessMode: ReadWriteOnce
 
 jmx:
@@ -330,7 +330,7 @@ zookeeper:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "lvm"
+    storageClass: ""
     accessMode: ReadWriteOnce
     size: 5
 

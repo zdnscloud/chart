@@ -267,5 +267,11 @@ spec:
         resources:
           requests:
             storage: {{ .Values.master.persistence.size}}Gi
-        storageClassName: {{ .Values.master.persistence.storageClass | quote }}
+        {{- if .Values.master.persistence.storageClass }}
+          {{- if (eq "-" .Values.master.persistence.storageClass) }}
+        storageClassName: ""
+          {{- else }}
+        storageClassName: "{{ .Values.master.persistence.storageClass }}"
+          {{- end }}
+        {{- end }}
 {{- end }}

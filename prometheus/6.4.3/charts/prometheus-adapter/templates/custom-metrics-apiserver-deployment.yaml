@@ -41,7 +41,7 @@ spec:
         {{- end }}
         - --cert-dir=/tmp/cert
         - --logtostderr=true
-        - --prometheus-url=http://{{ .Values.prometheus.serviceName }}.zcloud.svc{{ if .Values.prometheus.port }}:{{ .Values.prometheus.port }}{{end}}
+        - --prometheus-url=http://{{ .Release.Name}}-prometheus-prometheus.zcloud.svc{{ if .Values.prometheus.port }}:{{ .Values.prometheus.port }}{{end}}
         - --metrics-relist-interval={{ .Values.metricsRelistInterval }}
         - --v={{ .Values.logLevel }}
         - --config=/etc/adapter/config.yaml

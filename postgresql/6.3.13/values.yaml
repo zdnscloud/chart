@@ -241,7 +241,7 @@ persistence:
   subPath: ""
 
   # storageClass: "-"
-  storageClass: "lvm"
+  storageClass: ""
   accessModes:
     - ReadWriteOnce
   size: 8

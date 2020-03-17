@@ -8,18 +8,16 @@
     {
         "label": "dataStorageClass",
         "jsonKey": "persistence.storageClass",
-        "type": "enum",
+        "type": "storageClass",
         "required": false,
-        "description": "redmine persistence storageClass and default is lvm",
-        "validValues": ["cephfs", "lvm"]
+        "description": "redmine persistence storageClass name"
     },
     {
         "label": "databaseStorageClass",
         "jsonKey": "mariadb.master.persistence.storageClass",
-        "type": "enum",
+        "type": "storageClass",
         "required": false,
-        "description": "redmine persistence storageClass and default is lvm",
-        "validValues": ["cephfs", "lvm"]
+        "description": "redmine persistence storageClass name"
     },
     {
         "label": "databaseStorageSize",

@@ -15,10 +15,9 @@
     {
         "label": "storageClass",
         "jsonKey": "persistence.storageClass",
-        "type": "enum",
+        "type": "storageClass",
         "required": false,
-        "description": "mariadb persistence storageClass and default is lvm",
-        "validValues": ["cephfs", "lvm"]
+        "description": "mariadb persistence storageClass name"
     },
     {
         "label": "storageSize",

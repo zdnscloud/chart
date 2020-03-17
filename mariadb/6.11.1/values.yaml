@@ -221,7 +221,7 @@ master:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: lvm
+    storageClass: ""
     ## Persistent Volume Claim annotations
     ##
     annotations: {}
@@ -349,7 +349,7 @@ slave:
     ## If true, use a Persistent Volume Claim, If false, use emptyDir
     ##
     enabled: true
-    storageClass: lvm
+    storageClass: ""
     annotations:
     accessModes:
       - ReadWriteOnce
@@ -533,7 +533,7 @@ persistence:
     ##
     enabled: true
     mountPath: /bitnami/mariadb
-    storageClass: lvm
+    storageClass: ""
     annotations:
     accessModes:
       - ReadWriteOnce

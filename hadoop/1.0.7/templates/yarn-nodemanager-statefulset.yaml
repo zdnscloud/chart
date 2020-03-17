@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: {{ template "hadoop.fullname" . }}-yarn-nm
@@ -17,6 +17,11 @@ spec:
 {{- if .Values.yarn.nodeManager.parallelCreate }}
   podManagementPolicy: Parallel
 {{- end }}
+  selector:
+    matchLabels:
+      app: {{ template "hadoop.name" . }}
+      release: {{ .Release.Name }}
+      component: yarn-nm
   template:
     metadata:
       labels:

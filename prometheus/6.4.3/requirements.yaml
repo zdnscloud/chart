@@ -14,3 +14,7 @@ dependencies:
     version: 3.7.*
     repository: file://.charts/grafana/
     condition: grafana.enabled
+
+  - name: prometheus-adapter
+    version: 1.4.0
+    repository: file://.charts/prometheus-adapter/

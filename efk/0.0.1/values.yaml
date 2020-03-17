@@ -75,7 +75,7 @@ elasticsearch:
     periodSeconds: 10
     successThreshold: 3
     timeoutSeconds: 5
-  replicas: 1
+  replicas: 3
   resources:
     limits:
       cpu: 1000m
@@ -110,7 +110,7 @@ elasticsearch:
   transportPort: 9300
   updateStrategy: RollingUpdate
   volumeClaimTemplate:
-    storageClassName: "lvm"
+    storageClassName: ""
     accessModes:
     - ReadWriteOnce
     resources:
