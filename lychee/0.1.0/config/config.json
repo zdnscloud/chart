@@ -8,10 +8,9 @@
     {
         "label": "storageClass",
         "jsonKey": "persistence.storageClass",
-        "type": "enum",
+        "type": "storageClass",
         "required": false,
-        "description": "lychee persistence storageClass and default is lvm",
-        "validValues": ["cephfs", "lvm"]
+        "description": "lychee persistence storageClass"
     },
     {
         "label": "dataStorageSize",

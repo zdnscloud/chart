@@ -9,7 +9,7 @@ admin:
   user: admin
   password: admin
 persistence:
-  storageClass: lvm
+  storageClass: ""
   data:
     size: 10
   home:

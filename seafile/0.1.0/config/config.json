@@ -22,10 +22,9 @@
     {
         "label": "storageClass",
         "jsonKey": "persistence.storageClass",
-        "type": "enum",
+        "type": "storageClass",
         "required": false,
-        "description": "seafile persistence storageClass and default is lvm",
-        "validValues": ["cephfs", "lvm"]
+        "description": "seafile persistence storageClass"
     },
     {
         "label": "dataStorageSize",

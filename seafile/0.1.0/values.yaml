@@ -6,7 +6,7 @@ ingress:
   host: seafile.202.173.9.63.zc.zdns.cn
   tls: []
 persistence:
-  storageClass: lvm
+  storageClass: ""
   db:
     size: 5
   data:
@@ -14,5 +14,5 @@ persistence:
 db:
   password: mariadb!@#seafile$123
 admin:
-  user: 814160020@qq.com
-  password: "17319330797"
+  user: admin
+  password: zcloud

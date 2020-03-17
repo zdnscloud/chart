@@ -6,5 +6,5 @@ ingress:
   host: ""
   tls: []
 persistence:
-  storageClass: lvm
+  storageClass: ""
   size: 1
